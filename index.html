@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>領導學講義投影片 (傳統黑白多變編排版 50頁)</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #1f1f1f;
+    font-family: "Microsoft JhengHei", "PMingLiU", sans-serif;
+    font-size: 45px !important;
+    color: #111111;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section {
+    display: none;
+    width: 1920px !important;
+    height: 1080px !important;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    border: 4px solid #111111;
+    padding: 46px 68px 34px 68px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  section.active {
+    display: flex;
+  }
+  /* 傳統黑白標題列：多種變體 */
+  .hdr-line {
+    border-bottom: 5px solid #111111;
+    padding-bottom: 14px;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .hdr-box {
+    border: 3px solid #111111;
+    background-color: #f2f2f2;
+    padding: 14px 26px;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hdr-dark {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 16px 28px;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .hdr-dark h2 {
+    color: #ffffff;
+  }
+  .hdr-double {
+    border-top: 3px solid #111111;
+    border-bottom: 6px double #111111;
+    padding: 12px 0;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .tag-bw {
+    border: 2px solid #111111;
+    background-color: #ffffff;
+    color: #111111;
+    font-size: 34px;
+    font-weight: bold;
+    padding: 4px 16px;
+    white-space: nowrap;
+  }
+  .tag-inv {
+    background-color: #111111;
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: bold;
+    padding: 4px 16px;
+    white-space: nowrap;
+  }
+  h1 {
+    font-family: "DFKai-SB", "BiauKai", "Microsoft JhengHei", serif;
+    font-size: 92px;
+    line-height: 1.18;
+    color: #111111;
+    font-weight: bold;
+  }
+  h2 {
+    font-family: "DFKai-SB", "BiauKai", "Microsoft JhengHei", serif;
+    font-size: 66px;
+    line-height: 1.16;
+    color: #111111;
+    font-weight: bold;
+    word-wrap: break-word;
+  }
+  p, li {
+    font-size: 43px !important;
+    line-height: 1.42;
+    word-wrap: break-word;
+    color: #111111;
+  }
+  /* 傳統黑白講義重點強調：底線與黑底反白 */
+  .u-bold {
+    font-weight: 900;
+    border-bottom: 4px solid #111111;
+    padding-bottom: 2px;
+  }
+  .inv-hl {
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #111111;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  /* 多種版面容器 */
+  .row-split {
+    display: flex;
+    gap: 40px;
+    flex: 1;
+    align-items: stretch;
+  }
+  .col-58 {
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .col-42 {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .col-50 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .col-3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    flex: 1;
+  }
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 26px;
+    flex: 1;
+  }
+  .stack-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    flex: 1;
+    justify-content: center;
+  }
+  /* 傳統黑白線框與網底 */
+  .box-plain {
+    border: 2px solid #111111;
+    padding: 28px 34px;
+    background-color: #ffffff;
+  }
+  .box-gray {
+    border: 2px solid #111111;
+    padding: 28px 34px;
+    background-color: #f0f0f0;
+  }
+  .box-dashed {
+    border: 3px dashed #333333;
+    padding: 26px 32px;
+    background-color: #fafafa;
+  }
+  .box-leftbar {
+    border: 2px solid #cccccc;
+    border-left: 14px solid #111111;
+    padding: 24px 30px;
+    background-color: #ffffff;
+  }
+  ul.classic-list {
+    list-style: none;
+  }
+  ul.classic-list li {
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 24px;
+  }
+  ul.classic-list li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 32px;
+    color: #111111;
+  }
+  ul.arrow-list {
+    list-style: none;
+  }
+  ul.arrow-list li {
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 24px;
+  }
+  ul.arrow-list li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 30px;
+    color: #111111;
+  }
+  .case-label {
+    font-size: 34px;
+    font-weight: bold;
+    border-bottom: 3px solid #111111;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+  .sub-head {
+    font-family: "DFKai-SB", "BiauKai", "Microsoft JhengHei", serif;
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #111111;
+  }
+  .ppt-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #111111;
+    padding-top: 10px;
+    margin-top: 14px;
+    font-size: 28px;
+    color: #333333;
+  }
+  .slide-controls {
+    position: fixed;
+    bottom: 14px;
+    right: 24px;
+    background: #111111;
+    border: 2px solid #ffffff;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 9999;
+  }
+  .slide-controls button {
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid #111111;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 4px 14px;
+    cursor: pointer;
+  }
+  .slide-controls button:hover {
+    background: #dddddd;
+  }
+  .slide-controls span {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  @media print {
+    html, body {
+      display: block;
+      background: #ffffff;
+      overflow: visible;
+    }
+    section {
+      display: flex !important;
+      page-break-after: always;
+      margin: 0;
+    }
+    .slide-controls {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: 傳統黑白講義封面 (居中雙線框編排) -->
+<section class="active" style="justify-content:center; padding:75px 95px;">
+  <div style="border:6px double #111111; padding:65px 75px; height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+    <div>
+      <div style="font-size:36px; font-weight:bold; border-bottom:3px solid #111111; padding-bottom:12px; display:inline-block; margin-bottom:28px;">大學部管理學門課堂講義（按鍵盤 ← → 鍵翻頁）</div>
+      <h1>現代領導學：<br>讓人願意跟你一起拚的本事</h1>
+      <p style="font-size:46px !important; color:#333333; margin-top:24px;">從分組報告、社團幹部到職場帶隊的五大必修地圖</p>
+    </div>
+    <table style="width:100%; border-collapse:collapse; font-size:38px; text-align:center;">
+      <tr>
+        <td style="border:2px solid #111111; padding:18px; background:#111111; color:#ffffff; font-weight:bold;">單元一：認識領導</td>
+        <td style="border:2px solid #111111; padding:18px; background:#f2f2f2; font-weight:bold;">單元二：看人帶隊</td>
+        <td style="border:2px solid #111111; padding:18px; background:#ffffff; font-weight:bold;">單元三：激發熱情</td>
+        <td style="border:2px solid #111111; padding:18px; background:#f2f2f2; font-weight:bold;">單元四：溝通談判</td>
+        <td style="border:2px solid #111111; padding:18px; background:#ffffff; font-weight:bold;">單元五：帶領轉型</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- PAGE 2: 版型A (左條列 + 右灰底案例框) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">01</span><h2>什麼是領導？不是有頭銜才叫老大</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>核心定義：</strong>領導就是影響一群人，讓大家心甘情願朝<span class="u-bold">同一個目標</span>前進。</li>
+        <li><strong>頭銜不等於影響力：</strong>組長或店長只是職位，大家打從心底服你，才是真領導。</li>
+        <li><strong>畫出清楚藍圖：</strong>告訴團隊「我們要去哪裡、為什麼值得做」，凝聚向心力。</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">生活案例解析</span>
+        <div class="sub-head">期末分組報告：誰才是真組長？</div>
+        <p style="font-size:40px !important;">掛名組長的人只會發呆，但另一位同學主動整理大綱、協調時間，最後全組都聽他的——他就是真領導。</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="10" y="30" width="120" height="60" fill="#ffffff" stroke="#111" stroke-width="3"/><text x="70" y="68" font-size="24" text-anchor="middle" font-weight="bold">指出方向</text>
+        <line x1="135" y1="60" x2="170" y2="60" stroke="#111" stroke-width="4"/><polygon points="170,60 158,52 158,68" fill="#111"/>
+        <rect x="175" y="30" width="120" height="60" fill="#111111"/><text x="235" y="68" fill="#fff" font-size="24" text-anchor="middle" font-weight="bold">大家認同</text>
+        <line x1="300" y1="60" x2="335" y2="60" stroke="#111" stroke-width="4"/><polygon points="335,60 323,52 323,68" fill="#111"/>
+        <rect x="340" y="30" width="110" height="60" fill="#ffffff" stroke="#111" stroke-width="3"/><text x="395" y="68" font-size="24" text-anchor="middle" font-weight="bold">達標</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>2 / 50</span></div>
+</section>
+
+<!-- PAGE 3: 版型B (傳統上下對照表格式版面) -->
+<section>
+  <div class="hdr-box"><h2>管理 vs. 領導：把事做對 vs. 做對的事</h2><span class="tag-bw">第 02 講</span></div>
+  <div class="stack-rows">
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#f0f0f0; border-right:3px solid #111111; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="margin:0;">管理 (求穩定)</div>
+        <div style="font-size:34px; margin-top:8px;">維持秩序不亂套</div>
+      </div>
+      <div style="width:72%; padding:28px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p><strong>核心動作：</strong>排班表、算預算、盯進度，確保每天日常運作順順利利、不出包。</p>
+        <p style="margin-top:14px; color:#333;"><strong>台灣案例（7-11 門市管理）：</strong>精準叫貨、鮮食上架時間控管、結帳標準流程。</p>
+      </div>
+    </div>
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#111111; color:#ffffff; border-right:3px solid #111111; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="color:#ffffff; margin:0;">領導 (求突破)</div>
+        <div style="font-size:34px; margin-top:8px; color:#dddddd;">帶領大家闖新路</div>
+      </div>
+      <div style="width:72%; padding:28px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p><strong>核心動作：</strong>決定未來往哪裡衝、激發團隊鬥志，在環境大變動時帶大家轉型突圍。</p>
+        <p style="margin-top:14px; color:#333;"><strong>台灣案例（統一超商跨界）：</strong>打破超商只能買飲料的框架，把現煮咖啡、網購取貨全整合進來。</p>
+      </div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>3 / 50</span></div>
+</section>
+
+<!-- PAGE 4: 版型C (左案例圖解 + 右條列文字，左右反轉) -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">03</span><h2>特質論：領袖真的是「天生」的嗎？</h2></div>
+  <div class="row-split">
+    <div class="col-42 box-dashed">
+      <div>
+        <span class="case-label">情境對照</span>
+        <div class="sub-head">系學會會長 vs. 電競隊長</div>
+        <p style="font-size:40px !important;">愛熱鬧炒氣氛的人適合帶迎新宿營；但打電競比賽時，冷靜話少、戰術精準的指揮官反而更能帶隊奪冠。</p>
+      </div>
+      <svg width="100%" height="130" viewBox="0 0 460 130">
+        <circle cx="95" cy="65" r="46" fill="#fff" stroke="#111" stroke-width="3"/><text x="95" y="73" font-size="22" text-anchor="middle" font-weight="bold">企圖心</text>
+        <circle cx="230" cy="65" r="46" fill="#111"/><text x="230" y="73" fill="#fff" font-size="22" text-anchor="middle" font-weight="bold">講信用</text>
+        <circle cx="365" cy="65" r="46" fill="#fff" stroke="#111" stroke-width="3"/><text x="365" y="73" font-size="22" text-anchor="middle" font-weight="bold">抗壓力</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>早期英雄迷思：</strong>以前以為只有長得高、聲音宏亮、天生霸氣的人才能當領袖。</li>
+        <li><strong>共同加分特質：</strong>研究發現，有企圖心、講信用、自信且願意扛責任的人更容易出頭。</li>
+        <li><strong>最大盲點：</strong>有好個性不代表一定會成功，還得看<span class="inv-hl">後天學習</span>與<span class="inv-hl">環境配合</span>。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>4 / 50</span></div>
+</section>
+
+<!-- PAGE 5: 版型D (三欄垂直並排卡片) -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">04</span><h2>五大人格特質：哪種性格最容易帶隊？</h2></div>
+  <div class="col-3-grid">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">性格 1：外向性</div>
+        <div class="sub-head">愛互動、敢開口</div>
+        <p style="font-size:40px !important;">敢在大家面前說話、主動破冰，最容易在一開始被推舉出來當隊長。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px; font-weight:bold;">作用：容易被選上組長</div>
+    </div>
+    <div class="box-gray" style="border-width:4px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">性格 2：盡責性 (最關鍵)</div>
+        <div class="sub-head">超靠譜、不拖延</div>
+        <p style="font-size:40px !important;">答應的事一定做到、準時交稿，是團隊能順利完成任務的最大保證。</p>
+      </div>
+      <div style="border-top:3px solid #111; padding-top:10px; font-size:34px; font-weight:bold;">作用：真正帶隊走向成功</div>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">性格 3：開放性</div>
+        <div class="sub-head">愛嘗鮮、點子多</div>
+        <p style="font-size:40px !important;">願意嘗試新玩法、接受不同意見，不會死守老方法而跟不上時代。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px; font-weight:bold;">作用：激發團隊創意突破</div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>5 / 50</span></div>
+</section>
+
+<!-- PAGE 6: 版型E (上橫幅重點 + 下雙欄案例與圖解) -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">05</span><h2>高 EQ 領導力：智商決定錄取，情商決定升遷</h2></div>
+  <div class="box-leftbar" style="margin-bottom:24px;">
+    <p><strong>核心觀念：</strong>高情商領導包含三大能力——① 遇到突發狀況穩住自己脾氣不亂發飆；② 讀懂空氣察覺組員壓力；③ 把指責換成建設性建議。</p>
+  </div>
+  <div class="row-split">
+    <div class="col-50 box-gray">
+      <span class="case-label">台灣標竿案例：鼎泰豐</span>
+      <div class="sub-head">主管隨時「讀空氣」支援</div>
+      <p style="font-size:40px !important;">餐廳尖峰時段客人爆滿，組長隨時觀察服務生表情與腳步，只要發現有人快撐不住，立刻派人補位並給予鼓勵。</p>
+    </div>
+    <div class="col-50 box-plain" style="justify-content:center; align-items:center;">
+      <svg width="100%" height="230" viewBox="0 0 600 230">
+        <rect x="30" y="60" width="210" height="110" fill="#111"/><text x="135" y="125" fill="#fff" font-size="30" text-anchor="middle" font-weight="bold">管好自己情緒</text>
+        <line x1="255" y1="115" x2="345" y2="115" stroke="#111" stroke-width="6"/><polygon points="345,115 325,102 325,128" fill="#111"/>
+        <rect x="360" y="60" width="210" height="110" fill="#f0f0f0" stroke="#111" stroke-width="4"/><text x="465" y="125" fill="#111" font-size="30" text-anchor="middle" font-weight="bold">讀懂隊友需求</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>6 / 50</span></div>
+</section>
+
+<!-- PAGE 7: 版型F (純經典大字條列 + 底部摘要框) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">06</span><h2>行為論：領導力是可以後天練出來的！</h2></div>
+  <div class="box-plain" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <ul class="classic-list">
+      <li><strong>打破天生英雄迷思：</strong>科學家發現，只要學會正確的<span class="u-bold">帶隊動作</span>，內向安靜的人也能當好領導。</li>
+      <li><strong>第一個動作「把事盯清楚」：</strong>把分工表、截止時間、作品標準講明白，不讓大家霧煞煞。</li>
+      <li><strong>第二個動作「把人照顧好」：</strong>尊重組員意見、建立信任感，讓大家覺得跟你合作很愉快。</li>
+    </ul>
+  </div>
+  <div class="box-gray" style="margin-top:24px;">
+    <p><strong>台灣案例（王品集團）：</strong>一方面把端盤角度、上菜順序訂出嚴格標準（盯事情）；另一方面安排資深學長姐一對一照顧新人（顧心情）。</p>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>7 / 50</span></div>
+</section>
+
+<!-- PAGE 8: 版型A (左條列 + 右灰底案例框) -->
+<section>
+  <div class="hdr-box"><h2>密西根研究：把人當工具 vs. 把人當夥伴</h2><span class="tag-inv">07</span></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>生產導向 (只看數字)：</strong>把團隊當成產出報表的機器，天天只問「做完了沒？」。</li>
+        <li><strong>員工導向 (重視夥伴)：</strong>關心每個人的成長，給大家發揮創意的<span class="u-bold">自主空間</span>。</li>
+        <li><strong>長期實驗結果：</strong>把人當夥伴的團隊，不僅感情好，最後做出來的成績也更高！</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">台灣品牌案例</span>
+        <div class="sub-head">路易莎咖啡：給店長自主權</div>
+        <p style="font-size:40px !important;">路易莎總部不會把店長當機器人死板控制，而是允許店長根據學校或辦公商圈特性，自己調整座位與活動。</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <line x1="50" y1="80" x2="410" y2="35" stroke="#111" stroke-width="8"/>
+        <polygon points="230,58 205,110 255,110" fill="#111"/>
+        <rect x="45" y="40" width="55" height="32" fill="#888"/><rect x="360" y="5" width="60" height="32" fill="#111"/>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>8 / 50</span></div>
+</section>
+
+<!-- PAGE 9: 版型G (經典 2x2 四宮格矩陣) -->
+<section>
+  <div class="hdr-double"><span class="tag-bw">08</span><h2>管理方格：你是哪一種類型的組長？</h2></div>
+  <div class="grid-2x2">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">1,9 好好先生型</span><span class="tag-bw">只顧和氣</span></div>
+      <p style="font-size:40px !important;">整天請大家喝飲料聊天、不敢要求進度，結果報告開天窗、全組一起被當掉。</p>
+    </div>
+    <div class="box-gray" style="border-width:4px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:3px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">9,9 夢幻隊長型 (滿分)</span><span class="tag-inv">雙高標竿</span></div>
+      <p style="font-size:40px !important;">對作品品質要求超高，同時又很照顧組員感受，大家一起拚出最高分！</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">1,1 躺平擺爛型</span><span class="tag-bw">雙低失能</span></div>
+      <p style="font-size:40px !important;">不開會、不聯絡、不關心，等著抱大腿，是分組報告裡最讓人崩潰的雷隊友。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">9,1 暴君獨裁型</span><span class="tag-bw">只逼進度</span></div>
+      <p style="font-size:40px !important;">半夜狂傳訊息逼交稿、不聽任何人解釋，雖然報告做完了，但全組都討厭你。</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>9 / 50</span></div>
+</section>
+
+<!-- PAGE 10: 版型C (左案例圖解 + 右條列) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">09</span><h2>費德勒權變模型：沒有最強風格，只有最適合</h2></div>
+  <div class="row-split">
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">生活情境對照</span>
+        <div class="sub-head">活動倒數 3 小時突發大雨</div>
+        <p style="font-size:40px !important;">危機爆發（極端混亂）時，需要鐵血總召立刻下令「搬帳篷、改室內」；平時籌備期則需要溫和幹部慢慢討論。</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="10" y="30" width="130" height="60" fill="#111"/><text x="75" y="68" fill="#fff" font-size="22" text-anchor="middle">極混亂(硬)</text>
+        <rect x="165" y="30" width="130" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="230" y="68" font-size="22" text-anchor="middle" font-weight="bold">一般局(軟)</text>
+        <rect x="320" y="30" width="130" height="60" fill="#111"/><text x="385" y="68" fill="#fff" font-size="22" text-anchor="middle">極順利(硬)</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>個性很難改：</strong>費德勒認為，每個人天生偏「盯進度」或偏「顧人情」，很難一夕改變。</li>
+        <li><strong>看局勢挑人選：</strong>環境「超級混亂」或「超級順利」時，適合派強勢盯進度的人上場。</li>
+        <li><strong>中等局勢用暖男：</strong>當團隊卡在不上不下的瓶頸期，派善於溝通協調的人效果最好。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>10 / 50</span></div>
+</section>
+
+<!-- PAGE 11: 版型G (四階段情境卡片) -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">10</span><h2>情境領導：看隊友的「能力與意願」切換帶法</h2></div>
+  <div class="grid-2x2">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">S1 手把手教學</span><span class="tag-inv">不會又不想做</span></div>
+      <p style="font-size:40px !important;">針對完全沒經驗又怕生的新人，直接給明確步驟清單，一步一步盯著他完成。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">S2 邊教邊打氣</span><span class="tag-bw">不會但超熱血</span></div>
+      <p style="font-size:40px !important;">大一新生剛進社團超有熱情但常出錯，要多解釋「為什麼這樣做」並多鼓勵。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">S3 傾聽給信心</span><span class="tag-bw">很會但沒自信</span></div>
+      <p style="font-size:40px !important;">隊友實力很強卻不敢上台報告，別再教他怎麼做，多陪他聊天打氣、一起討論。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">S4 放手讓他飛</span><span class="tag-inv">超強又超主動</span></div>
+      <p style="font-size:40px !important;">遇到神隊友，只要講清楚最終目標就好，千萬別在旁邊碎念干擾他發揮。</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>11 / 50</span></div>
+</section>
+
+<!-- PAGE 12: 版型E (上橫幅重點 + 下雙欄) -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">11</span><h2>路徑—目標理論：好領導就是幫隊友「清路障」</h2></div>
+  <div class="box-gray" style="margin-bottom:24px;">
+    <p><strong>核心原則：</strong>領導者真正的工作是畫出到達終點的路線圖，並把路上的大石頭搬開，讓隊友確信「只要照著努力，一定拿得到獎賞」。</p>
+  </div>
+  <div class="row-split">
+    <div class="col-50 box-plain">
+      <span class="case-label">台灣企業案例：全聯福利中心</span>
+      <div class="sub-head">用電子標籤幫第一線減壓</div>
+      <p style="font-size:40px !important;">以前店員天天撕紙本價格標籤撕到手軟，全聯總部直接全面導入「電子價格標籤」，一鍵自動改價，幫門市搬開最大麻煩！</p>
+    </div>
+    <div class="col-50 box-dashed" style="justify-content:center; align-items:center;">
+      <svg width="100%" height="200" viewBox="0 0 560 200">
+        <rect x="20" y="65" width="110" height="70" fill="#111"/><text x="75" y="108" fill="#fff" font-size="26" text-anchor="middle">隊友</text>
+        <line x1="140" y1="100" x2="420" y2="100" stroke="#111" stroke-width="6" stroke-dasharray="12,8"/>
+        <rect x="235" y="65" width="90" height="70" fill="#ddd" stroke="#111" stroke-width="2"/><line x1="225" y1="55" x2="335" y2="145" stroke="#111" stroke-width="8"/>
+        <polygon points="445,60 520,100 445,140" fill="#111"/>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>12 / 50</span></div>
+</section>
+
+<!-- PAGE 13: 版型B (上下雙欄對比) -->
+<section>
+  <div class="hdr-box"><h2>決策參與模型：何時「自己決定」或「大家投票」？</h2><span class="tag-inv">12</span></div>
+  <div class="stack-rows">
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:30%; background:#111111; color:#ffffff; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="color:#ffffff; margin:0;">情況一：火燒眉毛</div>
+        <div style="font-size:36px; margin-top:8px;">➔ 自己拍板決定</div>
+      </div>
+      <div style="width:70%; padding:28px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p><strong>判斷邏輯：</strong>緊急時刻還開會民主投票，只會耽誤時機一起完蛋。</p>
+        <p style="margin-top:12px; color:#333;"><strong>生活案例：</strong>距離高鐵末班車發車只剩 5 分鐘，隊長直接喊「全部跑起來跟我走」就對了！</p>
+      </div>
+    </div>
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:30%; background:#f0f0f0; border-right:3px solid #111111; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="margin:0;">情況二：需大家配合</div>
+        <div style="font-size:36px; margin-top:8px;">➔ 邀請大家討論</div>
+      </div>
+      <div style="width:70%; padding:28px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p><strong>判斷邏輯：</strong>如果這件事需要組員辛苦執行，先找大家討論才能換取真心配合。</p>
+        <p style="margin-top:12px; color:#333;"><strong>生活案例：</strong>畢業旅行晚餐吃什麼、分組報告主題選哪個，大家一起投票才不會有人抱怨。</p>
+      </div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>13 / 50</span></div>
+</section>
+
+<!-- PAGE 14: 版型A -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">13</span><h2>領導者—成員交換 (LMX)：主管真的會偏心嗎？</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>殘酷的職場現實：</strong>主管時間有限，一定會把成員分成<span class="inv-hl">核心班底</span>與<span class="inv-hl">一般邊緣人</span>。</li>
+        <li><strong>核心班底 (圈內人)：</strong>拿到最棒的資源、最先知道內幕消息、犯錯也比較容易被原諒。</li>
+        <li><strong>聰明生存法則：</strong>不要只會抱怨主管偏心，主動幫主管解決最頭痛的難題，就能跨進核心圈！</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">打工現場觀察</span>
+        <div class="sub-head">手搖飲店排班：為何有人總拿好班？</div>
+        <p style="font-size:40px !important;">平時手腳俐落、臨時缺人願意幫忙代班的工讀生，自然成為店長的「核心班底」，排假與升遷都會優先照顧。</p>
+      </div>
+      <svg width="100%" height="125" viewBox="0 0 460 125">
+        <rect x="15" y="15" width="430" height="95" fill="#fff" stroke="#111" stroke-width="3"/><text x="365" y="70" font-size="22" font-weight="bold">邊緣人</text>
+        <rect x="35" y="32" width="230" height="60" fill="#111"/><text x="150" y="70" fill="#fff" font-size="24" text-anchor="middle" font-weight="bold">核心班底 (圈內)</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>14 / 50</span></div>
+</section>
+
+<!-- PAGE 15: 版型D (三欄垂直結構) -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">14</span><h2>魅力型領導：像偶像一樣自帶光環的領袖</h2></div>
+  <div class="col-3-grid">
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">特徵一：願景感染力</div>
+        <div class="sub-head">講話超有畫面感</div>
+        <p style="font-size:40px !important;">敢提出別人不敢想的瘋狂夢想，讓聽眾聽完熱血沸騰、願意追隨。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">例：Gogoro 喊出能源革命</div>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">特徵二：以身作則</div>
+        <div class="sub-head">自己先跳下去拚</div>
+        <p style="font-size:40px !important;">遇到風險時衝在最前面，不是躲在冷氣房裡指揮別人去冒險。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">關鍵：用行動建立高度信任</div>
+    </div>
+    <div class="box-dashed" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">警告：個人崇拜陷阱</div>
+        <div class="sub-head">成也一人、敗也一人</div>
+        <p style="font-size:40px !important;">若整個團隊只靠一個人撐場，一旦他離開或判斷錯誤，組織就會瞬間垮台。</p>
+      </div>
+      <div style="border-top:2px dashed #111; padding-top:10px; font-size:34px; font-weight:bold;">對策：必須建立接班制度</div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>15 / 50</span></div>
+</section>
+
+<!-- PAGE 16: 版型C (左案例 + 右條列) -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">15</span><h2>交易型領導：銀貨兩訖、賞罰分明的規則派</h2></div>
+  <div class="row-split">
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">台灣標竿案例</span>
+        <div class="sub-head">台灣高鐵：零誤差準點紀律</div>
+        <p style="font-size:40px !important;">高鐵駕駛與維修員不能靠「自由發揮」，必須嚴格遵守 SOP，準點與安全達標就發獎金，違規就嚴格懲處。</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="160" height="60" fill="#111"/><text x="95" y="68" fill="#fff" font-size="24" text-anchor="middle">任務達標</text>
+        <path d="M190,50 L270,50 M270,70 L190,70" stroke="#111" stroke-width="5"/>
+        <rect x="285" y="30" width="160" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="365" y="68" font-size="24" text-anchor="middle" font-weight="bold">獎金到手</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>條件交換原則：</strong>「你幫我達成這個目標，我就給你對應的獎金或好處」，規則講清楚。</li>
+        <li><strong>主動盯防出錯：</strong>平時就用數據監控進度，發現快要偏離軌道時立刻出手拉回來。</li>
+        <li><strong>最差勁的帶法：</strong>平時完全不管，等出大事了才跳出來罵人扣錢（被動例外管理）。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>16 / 50</span></div>
+</section>
+
+<!-- PAGE 17: 版型G (四招矩陣) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">16</span><h2>轉換型領導：激發團隊超能力的四大絕招</h2></div>
+  <div class="grid-2x2">
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">1. 自己先做到 (榜樣)</span><span class="tag-inv">以身作則</span></div>
+      <p style="font-size:40px !important;">要求別人準時，自己永遠最早到；要求大家拚命，自己比誰都投入。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">2. 賦予工作意義</span><span class="tag-bw">精神感召</span></div>
+      <p style="font-size:40px !important;">讓大家知道我們不是在搬磚頭，而是在蓋一座全台灣最棒的大教堂！</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">3. 鼓勵打破常規</span><span class="tag-bw">智力激發</span></div>
+      <p style="font-size:40px !important;">允許大家挑戰「以前都是這樣做的」，就算實驗失敗也不會被罵到臭頭。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">4. 當專屬教練</span><span class="tag-inv">個別關懷</span></div>
+      <p style="font-size:40px !important;">看懂每個隊員的強項與弱點，幫他量身打造成長舞台，讓他變得更厲害。</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>17 / 50</span></div>
+</section>
+
+<!-- PAGE 18: 版型F (純經典大字條列 + 底部轉型橫條) -->
+<section>
+  <div class="hdr-box"><h2>轉換型領導實戰：捷安特如何變世界品牌？</h2><span class="tag-bw">17</span></div>
+  <div class="box-plain" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <ul class="classic-list">
+      <li><strong>打破代工宿命：</strong>以前只會幫外國品牌低價組裝腳踏車，利潤微薄又沒尊嚴。</li>
+      <li><strong>老闆親自帶頭騎：</strong>高齡創辦人親自騎單車環島，用行動讓全公司愛上<span class="u-bold">騎行文化</span>。</li>
+      <li><strong>重新定義價值：</strong>讓員工從「鎖螺絲的工人」蛻變成「推廣健康生活」的團隊。</li>
+    </ul>
+  </div>
+  <div style="display:flex; align-items:center; justify-content:space-between; border:3px solid #111; padding:20px 36px; margin-top:24px; background:#f2f2f2;">
+    <span style="font-size:42px; font-weight:bold;">低價組裝代工廠</span>
+    <span style="font-size:46px; font-weight:bold;">➔ 文化覺醒 ➔</span>
+    <span style="font-size:44px; font-weight:bold; background:#111; color:#fff; padding:6px 20px;">全球自行車第一品牌</span>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>18 / 50</span></div>
+</section>
+
+<!-- PAGE 19: 版型E -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">18</span><h2>全光譜領導：談夢想前，先把獎金規則訂好</h2></div>
+  <div class="box-leftbar" style="margin-bottom:24px;">
+    <p><strong>黃金組合：</strong>只談夢想不發錢叫「畫大餅」；只發錢不談願景，員工跳槽更快。必須先用公平賞罰打底，再加上熱血願景。</p>
+  </div>
+  <div class="row-split">
+    <div class="col-50 box-gray">
+      <span class="case-label">台灣電商案例：PChome</span>
+      <div class="sub-head">物流紀律 + 生態創新</div>
+      <p style="font-size:40px !important;">倉庫包裝出貨必須靠「明確獎懲制度」守住快速到貨底線；而面對外來電商競爭，則需要「轉換型創新」打造新會員生態。</p>
+    </div>
+    <div class="col-50 box-plain" style="justify-content:center; align-items:center;">
+      <svg width="100%" height="210" viewBox="0 0 560 210">
+        <rect x="40" y="115" width="480" height="65" fill="#111"/><text x="280" y="156" fill="#fff" font-size="26" text-anchor="middle" font-weight="bold">底層地板：公平賞罰與制度</text>
+        <rect x="40" y="30" width="480" height="65" fill="#f0f0f0" stroke="#111" stroke-width="4"/><text x="280" y="71" fill="#111" font-size="26" text-anchor="middle" font-weight="bold">頂層天花板：夢想與創新突破</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>19 / 50</span></div>
+</section>
+
+<!-- PAGE 20: 版型A -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">19</span><h2>僕人式領導：金字塔倒過來，老闆幫員工服務</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>服務第一哲學：</strong>當領導者不是為了耍威風，而是為了<span class="u-bold">成就團隊每一個人</span>。</li>
+        <li><strong>三大暖心動作：</strong>認真聽組員說話、幫大家擋掉不合理要求、協助隊員成長。</li>
+        <li><strong>驚人回報效應：</strong>當你真心照顧隊友，隊友就會拼命幫你把客戶與業績照顧好。</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">生活案例解析</span>
+        <div class="sub-head">神級活動總召：幫工人買便當協調場地</div>
+        <p style="font-size:40px !important;">辦大型校園演唱會時，最好的總召不是拿著對講機大吼，而是主動幫場佈組搬水、跟學校溝通借器材。</p>
+      </div>
+      <svg width="100%" height="130" viewBox="0 0 460 130">
+        <polygon points="70,10 390,10 230,120" fill="#111"/>
+        <text x="230" y="45" fill="#fff" font-size="24" text-anchor="middle" font-weight="bold">第一線隊友在最上面</text>
+        <text x="230" y="85" fill="#ddd" font-size="20" text-anchor="middle">領導者在下面撐住</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>20 / 50</span></div>
+</section>
+
+<!-- PAGE 21: 版型B (上下雙欄對比) -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">20</span><h2>真誠領導：不演戲、不裝逼，做真實的自己</h2></div>
+  <div class="stack-rows">
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#f0f0f0; border-right:3px solid #111111; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="margin:0;">表裡如一</div>
+        <div style="font-size:34px; margin-top:8px;">敢承認我不知道</div>
+      </div>
+      <div style="width:72%; padding:26px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p>心裡想的、嘴巴說的、做出來的完全一致；遇到不懂的領域大方請教專業組員，反而贏得尊重。</p>
+      </div>
+    </div>
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#111111; color:#ffffff; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="color:#ffffff; margin:0;">透明坦誠</div>
+        <div style="font-size:34px; margin-top:8px;">社團赤字案例</div>
+      </div>
+      <div style="width:72%; padding:26px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p>社長若隱瞞經費見底，最後發不出錢會被罵翻；若提早攤開帳本向幹部求助，大家反而會一起動腦找贊助。</p>
+      </div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>21 / 50</span></div>
+</section>
+
+<!-- PAGE 22: 版型C -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">21</span><h2>道德領導：賺錢要有底線，不能不擇手段</h2></div>
+  <div class="row-split">
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">台灣標竿企業</span>
+        <div class="sub-head">台達電：把誠信與節能刻進 DNA</div>
+        <p style="font-size:40px !important;">台達電幾十年前就堅持研發省電電源、拒絕黑心材料，如今成為全球科技巨頭最信賴的綠色供應鏈夥伴。</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="20" y="30" width="190" height="60" fill="#111"/><text x="115" y="68" fill="#fff" font-size="24" text-anchor="middle">自己守規矩</text>
+        <rect x="250" y="30" width="190" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="345" y="68" font-size="24" text-anchor="middle" font-weight="bold">制度防作弊</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>過程比結果重要：</strong>靠抄襲、作弊或欺騙客戶拿到的第一名，遲早會連本帶利還回去。</li>
+        <li><strong>守住道德紅線：</strong>領導者自己不貪污、不走後門，還要建立制度防止團隊犯錯。</li>
+        <li><strong>長久品牌信任：</strong>現代消費者與求職者眼睛雪亮，良心企業才能活得久。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>22 / 50</span></div>
+</section>
+
+<!-- PAGE 23: 版型F (純經典大字條列 + 底部對照) -->
+<section>
+  <div class="hdr-box"><h2>權力的五種來源：別人憑什麼要聽你的？</h2><span class="tag-bw">22</span></div>
+  <div class="box-plain" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <ul class="arrow-list">
+      <li><strong>靠位置拿到的權：</strong>法定權（我是組長）、獎賞權（我能打分數）、強制權（我能記過罰錢）。</li>
+      <li><strong>靠自己修煉的權：</strong><span class="inv-hl">專家權</span>（我技術最強）與<span class="inv-hl">參照權</span>（我人緣魅力超好）。</li>
+      <li><strong>寫程式專題實例：</strong>就算你掛名組長，只要系統一當機，全組一定立刻轉頭看最會寫 Code 的大神！</li>
+    </ul>
+  </div>
+  <div style="display:flex; gap:24px; margin-top:24px;">
+    <div class="box-gray" style="flex:1; text-align:center;"><strong>靠頭銜施壓 ➔ 換來表面服從</strong></div>
+    <div style="flex:1; text-align:center; background:#111; color:#fff; padding:28px;"><strong>靠專業與魅力 ➔ 換來真心賣命</strong></div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>23 / 50</span></div>
+</section>
+
+<!-- PAGE 24: 版型D (三欄垂直結構) -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">23</span><h2>權力依賴法則：如何讓自己變得「無可取代」？</h2></div>
+  <div class="col-3-grid">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">條件一：超重要</div>
+        <div class="sub-head">解決核心痛點</div>
+        <p style="font-size:40px !important;">你掌握的資源或技能，必須是團隊要成功絕對少不了的關鍵。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">例：台積電先進 AI 晶片</div>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">條件二：超稀有</div>
+        <div class="sub-head">別人很少會做</div>
+        <p style="font-size:40px !important;">人人都能做的打雜工作沒有議價空間，越少人會的技能越值錢。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">例：全球只有極少數能做</div>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">條件三：難取代</div>
+        <div class="sub-head">短期學不起來</div>
+        <p style="font-size:40px !important;">就算對手想抄襲或找人替代，也沒辦法在短時間內複製你的門檻。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">結果：連大廠都排隊拜訪</div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>24 / 50</span></div>
+</section>
+
+<!-- PAGE 25: 版型G (2x2 四招說服) -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">24</span><h2>影響力說服術：沒有職權時，怎麼說服別人？</h2></div>
+  <div class="grid-2x2">
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">講數據擺事實 (最有效)</span><span class="tag-inv">理性說服</span></div>
+      <p style="font-size:40px !important;">別只說「我覺得這樣比較好」，拿出調查數據或成功案例，誰都無法反駁。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">邀請對方一起設計</span><span class="tag-bw">諮詢參與</span></div>
+      <p style="font-size:40px !important;">問他「如果是你，這段簡報會怎麼改？」，人對自己參與的想法最不會反對。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">先找好盟友背書</span><span class="tag-bw">結盟策略</span></div>
+      <p style="font-size:40px !important;">開大會提案前，先私下跟意見領袖溝通取得支持，開會時就不會孤軍奮戰。</p>
+    </div>
+    <div class="box-dashed" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px dashed #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">奪命連環催 (最無效)</span><span class="tag-inv">施壓手段</span></div>
+      <p style="font-size:40px !important;">整天用「不交就踢出組別」威脅人，只會換來敷衍了事的垃圾報告。</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>25 / 50</span></div>
+</section>
+
+<!-- PAGE 26: 版型E -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">25</span><h2>向上管理：怎麼跟教授或未來老闆溝通最加分？</h2></div>
+  <div class="box-gray" style="margin-bottom:24px;">
+    <p><strong>核心原則：</strong>向上管理不是拍馬屁，而是帶著「選擇題」找主管討論，且遇到壞消息第一時間通報並附上補救辦法。</p>
+  </div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <span class="case-label">實戰溝通黃金模板</span>
+      <div class="sub-head">找指導教授或主管的「三句話公式」</div>
+      <p style="font-size:41px !important;">「老師，關於這份專題，我建議採用 A 方案（結論）；因為數據顯示成本低 30%（理由）；目前需要您協助確認問卷題目（需求）。」</p>
+    </div>
+    <div class="col-42 box-dashed" style="justify-content:center; align-items:center;">
+      <svg width="100%" height="210" viewBox="0 0 460 210">
+        <rect x="25" y="25" width="410" height="65" fill="#111"/><text x="230" y="66" fill="#fff" font-size="26" text-anchor="middle" font-weight="bold">1. 先講結論與建議方案</text>
+        <rect x="25" y="115" width="410" height="65" fill="#fff" stroke="#111" stroke-width="3"/><text x="230" y="156" fill="#111" font-size="24" text-anchor="middle" font-weight="bold">2. 補充理由 + 需要什麼協助</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>26 / 50</span></div>
+</section>
+
+<!-- PAGE 27: 版型A -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">26</span><h2>心理賦權：讓隊友從「被動打工」變「主動當家」</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>賦權不是丟包不管：</strong>而是給隊友決定權的同時，也給他信心與舞台。</li>
+        <li><strong>點燃內心小宇宙：</strong>讓他覺得這件事「很有意義、我有能力做好、而且我說了算」。</li>
+        <li><strong>畫好安全護欄：</strong>只要不超出預算和底線，就讓第一線大膽去試！</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">服務業經典做法</span>
+        <div class="sub-head">高級飯店給櫃檯的「現場補償金」</div>
+        <p style="font-size:40px !important;">只要客人不開心，櫃檯人員不用請示經理，現場就能直接送免費下午茶或升等房型，3 分鐘內化解客訴！</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="130" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="80" y="68" font-size="22" text-anchor="middle" font-weight="bold">畫好底線</text>
+        <rect x="165" y="30" width="130" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="230" y="68" font-size="22" text-anchor="middle" font-weight="bold">給予信任</text>
+        <rect x="315" y="30" width="130" height="60" fill="#111"/><text x="380" y="68" fill="#fff" font-size="22" text-anchor="middle" font-weight="bold">現場決定</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>27 / 50</span></div>
+</section>
+
+<!-- PAGE 28: 版型C -->
+<section>
+  <div class="hdr-box"><h2>聰明授權術：別把所有事情都攬在自己身上累死</h2><span class="tag-inv">27</span></div>
+  <div class="row-split">
+    <div class="col-42 box-dashed">
+      <div>
+        <span class="case-label">組長最常犯的錯</span>
+        <div class="sub-head">拒絕「自己重做一遍」陷阱</div>
+        <p style="font-size:40px !important;">很多組長嫌組員簡報做太醜，乾脆半夜自己全部重做，結果自己累個半死、組員也永遠學不會！</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="120" height="60" fill="#111"/><text x="75" y="68" fill="#fff" font-size="22" text-anchor="middle">講規格</text>
+        <line x1="140" y1="60" x2="165" y2="60" stroke="#111" stroke-width="4"/>
+        <rect x="170" y="30" width="120" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="230" y="68" font-size="22" text-anchor="middle" font-weight="bold">給資源</text>
+        <line x1="295" y1="60" x2="320" y2="60" stroke="#111" stroke-width="4"/>
+        <rect x="325" y="30" width="120" height="60" fill="#111"/><text x="385" y="68" fill="#fff" font-size="22" text-anchor="middle">看初稿</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>講清楚「要什麼結果」：</strong>定義好最後交出來的樣子與死線，方法讓他自己發揮。</li>
+        <li><strong>給工具與資源：</strong>不能只叫馬兒跑又不給草吃，預算、帳號權限要同步給到位。</li>
+        <li><strong>設定期中檢查點：</strong>約好週三先看初稿，才不會週五上台前才發現全部寫錯方向！</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>28 / 50</span></div>
+</section>
+
+<!-- PAGE 29: 版型F (純經典大字條列 + 階梯流程圖) -->
+<section>
+  <div class="hdr-double"><span class="tag-bw">28</span><h2>團隊發展五階段：為什麼剛組隊一定會吵架？</h2></div>
+  <div class="box-plain" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <ul class="classic-list">
+      <li><strong>形成 ➔ 風暴期 (必經陣痛)：</strong>剛認識都很客氣，開始分工後一定會因為習慣不同而<span class="u-bold">爆發摩擦吵架</span>。</li>
+      <li><strong>規範 ➔ 成熟期 (默契爆發)：</strong>吵完架把規則訂清楚，大家開始互補合作，戰力直線飆升！</li>
+      <li><strong>商業競賽案例：</strong>有人想走創意路線、有人想走穩健財務，吵架很正常，撐過磨合期就能奪冠。</li>
+    </ul>
+  </div>
+  <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin-top:22px; text-align:center; font-size:36px; font-weight:bold;">
+    <div style="border:2px solid #111; padding:16px;">1. 形成期 (客氣)</div>
+    <div style="border:3px solid #111; padding:16px; background:#f0f0f0;">2. 風暴期 (吵架磨合)</div>
+    <div style="border:2px solid #111; padding:16px;">3. 規範期 (訂立規矩)</div>
+    <div style="background:#111; color:#fff; padding:16px;">4. 成熟期 (默契爆發)</div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>29 / 50</span></div>
+</section>
+
+<!-- PAGE 30: 版型B (上下雙欄對比) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">29</span><h2>心理安全感：讓隊友敢說真話、不怕問笨問題</h2></div>
+  <div class="stack-rows">
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#111111; color:#ffffff; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="color:#ffffff; margin:0;">核心定義</div>
+        <div style="font-size:34px; margin-top:8px;">Google 研究第一名</div>
+      </div>
+      <div style="width:72%; padding:26px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p>提出怪點子、承認自己不會或犯錯時，不會被嘲笑或翻白眼。最強團隊不是因為智商最高，而是因為大家<span class="u-bold">敢講真話</span>！</p>
+      </div>
+    </div>
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#f0f0f0; border-right:3px solid #111111; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="margin:0;">開會現場對照</div>
+        <div style="font-size:34px; margin-top:8px;">為何大家不講話？</div>
+      </div>
+      <div style="width:72%; padding:26px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p>因為以前有人提建議時，組長直接酸一句「這點子超爛」，從此以後開會大家就只會低頭滑手機、沒人願意貢獻想法。</p>
+      </div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>30 / 50</span></div>
+</section>
+
+<!-- PAGE 31: 版型G (GROW 四步驟) -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">30</span><h2>教練式引導 (GROW)：用提問代替說教的四步驟</h2></div>
+  <div class="grid-2x2">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">1. 問目標 (Goal)</span><span class="tag-bw">想達成什麼</span></div>
+      <p style="font-size:40px !important;">先別急著唸他，問一句：「這次活動你最希望做出什麼樣的亮點？」</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">2. 問現況 (Reality)</span><span class="tag-inv">卡在哪裡</span></div>
+      <p style="font-size:40px !important;">客觀盤點進度：「目前已經完成多少？現在遇到最大的困難是什麼？」</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">3. 問方法 (Options)</span><span class="tag-inv">有哪幾招</span></div>
+      <p style="font-size:40px !important;">把思考權還給他：「如果預算不夠，你覺得還有哪三種替代做法？」</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">4. 問行動 (Will)</span><span class="tag-bw">何時開始</span></div>
+      <p style="font-size:40px !important;">確認執行承諾：「這三招你決定先試哪一招？明天幾點前可以啟動？」</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>31 / 50</span></div>
+</section>
+
+<!-- PAGE 32: 版型A -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">31</span><h2>衝突管理五招：團隊吵架時，怎麼收場最漂亮？</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>兩把衡量尺：</strong>你有多堅持自己的立場？你有多願意配合對方？</li>
+        <li><strong>快刀斬亂麻 (競爭)：</strong>遇到抄襲作弊或安全紅線，沒得商量，直接強硬制止！</li>
+        <li><strong>把餅做大 (統合雙贏)：</strong>雙方意見都很重要時，找出一種<span class="u-bold">結合兩邊優點</span>的新方案。</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">社團成發實例</span>
+        <div class="sub-head">美宣要華麗 vs. 總務要省錢</div>
+        <p style="font-size:40px !important;">別硬逼其中一組妥協！改用「數位投影背景＋重點實體道具」的雙贏方案，既省下 50% 預算，視覺效果反而更酷！</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="150" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="90" y="68" font-size="22" text-anchor="middle" font-weight="bold">要舞台效果</text>
+        <rect x="180" y="30" width="100" height="60" fill="#111"/><text x="230" y="68" fill="#fff" font-size="24" text-anchor="middle" font-weight="bold">雙贏</text>
+        <rect x="295" y="30" width="150" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="370" y="68" font-size="22" text-anchor="middle" font-weight="bold">要控制預算</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>32 / 50</span></div>
+</section>
+
+<!-- PAGE 33: 版型D (三欄垂直結構) -->
+<section>
+  <div class="hdr-box"><h2>雙贏談判術：談判前，先準備好「最強備案」</h2><span class="tag-inv">32</span></div>
+  <div class="col-3-grid">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">心法一：看利益</div>
+        <div class="sub-head">別只盯著價格砍</div>
+        <p style="font-size:40px !important;">搞懂對方真正想要什麼（也許店家不在意打折，但很需要學生幫他打卡宣傳）。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">重點：把餅做大再分</div>
+    </div>
+    <div class="box-gray" style="border-width:4px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">心法二：BATNA</div>
+        <div class="sub-head">準備好最強備案</div>
+        <p style="font-size:40px !important;">談判破局時你的「備用退路」，先問好另一家報價，你在談判桌上才有底氣。</p>
+      </div>
+      <div style="border-top:3px solid #111; padding-top:10px; font-size:34px; font-weight:bold;">底氣來源：隨時可轉身離開</div>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">心法三：換籌碼</div>
+        <div class="sub-head">社團拉贊助實戰</div>
+        <p style="font-size:40px !important;">主動提出「幫手搖飲店設計活動限定杯套與 IG 抽獎」，用宣傳曝光去換折扣！</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">結果：店家與社團雙贏</div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>33 / 50</span></div>
+</section>
+
+<!-- PAGE 34: 版型C -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">33</span><h2>雙因子理論：為什麼光靠「發錢」沒辦法讓人熱血？</h2></div>
+  <div class="row-split">
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">打工與實習觀察</span>
+        <div class="sub-head">為何有人寧願選新創公司？</div>
+        <p style="font-size:40px !important;">在死板大公司只能天天影印掃描（零激勵因子）；在好團隊裡主管帶你做真實專案、公開肯定點子（滿滿成就感）！</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="20" y="30" width="190" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="115" y="68" font-size="22" text-anchor="middle" font-weight="bold">薪資 ➔ 消除抱怨</text>
+        <rect x="250" y="30" width="190" height="60" fill="#111"/><text x="345" y="68" fill="#fff" font-size="22" text-anchor="middle" font-weight="bold">成就感 ➔ 拚命衝</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>保健因子 (基本盤)：</strong>薪水、冷氣、休假制度；給太少會抱怨離職，給夠了大家只覺得「本來就該給」。</li>
+        <li><strong>激勵因子 (超能力)：</strong>成就感、被公開表揚、學到新本事；這才是讓人<span class="u-bold">主動衝刺</span>的燃料！</li>
+        <li><strong>帶隊核心秘訣：</strong>先把基本待遇顧好（消除抱怨），再多給舞台與肯定（點燃熱情）。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>34 / 50</span></div>
+</section>
+
+<!-- PAGE 35: 版型E -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">34</span><h2>期望理論：想讓人努力，「三個環節」不能斷</h2></div>
+  <div class="box-gray" style="margin-bottom:24px;">
+    <p><strong>心理算式：</strong>一個人願不願意拚命，取決於「① 我做得到嗎？ × ② 做到真的有獎嗎？ × ③ 獎品是我想要的嗎？」任何一項為零，動力就歸零！</p>
+  </div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <span class="case-label">生活案例解析</span>
+      <div class="sub-head">系際盃籃球賽的「必勝獎勵設計」</div>
+      <p style="font-size:41px !important;">隊長不能喊「拿全國冠軍請吃牛排」（做不到）；改成「晉級八強就請全隊吃頂級燒肉」（跳起來摸得到＋大家超想要），全隊立刻拚命練球！</p>
+    </div>
+    <div class="col-42 box-dashed" style="justify-content:center; align-items:center;">
+      <svg width="100%" height="210" viewBox="0 0 460 210">
+        <rect x="15" y="70" width="115" height="70" fill="#fff" stroke="#111" stroke-width="3"/><text x="72" y="113" font-size="24" text-anchor="middle" font-weight="bold">做得到</text>
+        <text x="152" y="115" font-size="34" text-anchor="middle" font-weight="bold">➔</text>
+        <rect x="175" y="70" width="115" height="70" fill="#111"/><text x="232" y="113" fill="#fff" font-size="24" text-anchor="middle" font-weight="bold">必兌現</text>
+        <text x="312" y="115" font-size="34" text-anchor="middle" font-weight="bold">➔</text>
+        <rect x="335" y="70" width="115" height="70" fill="#fff" stroke="#111" stroke-width="3"/><text x="392" y="113" font-size="24" text-anchor="middle" font-weight="bold">超想要</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>35 / 50</span></div>
+</section>
+
+<!-- PAGE 36: 版型A -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">35</span><h2>目標設定與 OKR：怎麼訂目標才不會變空話？</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>具體數字完勝口號：</strong>說「這學期要變強」沒用；說「多益考到 850 分」大腦才會開始想辦法！</li>
+        <li><strong>O (大方向) + KR (檢核數字)：</strong>O 要熱血鼓舞人心，KR 則用白紙黑字的數字每週追蹤。</li>
+        <li><strong>全組公開透明：</strong>把每個人的 OKR 貼在群組公告，大家互相看得到進度，自然產生正向壓力。</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">社團經營實戰</span>
+        <div class="sub-head">用 OKR 經營大學社團粉專</div>
+        <p style="font-size:40px !important;"><strong>O：</strong>成為全校人氣第一社團。<br><strong>KR1：</strong>粉絲從 500 衝破 2,000 人。<br><strong>KR2：</strong>每週穩定發布 2 支短影音。</p>
+      </div>
+      <svg width="100%" height="125" viewBox="0 0 460 125">
+        <rect x="15" y="12" width="430" height="44" fill="#111"/><text x="230" y="42" fill="#fff" font-size="22" text-anchor="middle" font-weight="bold">O：全校人氣第一社團</text>
+        <rect x="15" y="68" width="205" height="44" fill="#fff" stroke="#111" stroke-width="3"/><text x="117" y="98" font-size="20" text-anchor="middle" font-weight="bold">KR1：粉絲破 2000</text>
+        <rect x="240" y="68" width="205" height="44" fill="#fff" stroke="#111" stroke-width="3"/><text x="342" y="98" font-size="20" text-anchor="middle" font-weight="bold">KR2：週更 2 支片</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>36 / 50</span></div>
+</section>
+
+<!-- PAGE 37: 版型B (三層冰山/金字塔架構) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">36</span><h2>組織文化：不看牆上標語，看老闆怎麼獎勵人</h2></div>
+  <div class="stack-rows">
+    <div style="border:2px solid #111; padding:22px 34px; background:#ffffff;">
+      <p><strong>第一層（看得見的）：</strong>辦公室裝潢、制服、社團口號、開會儀式。</p>
+    </div>
+    <div style="border:2px solid #111; padding:22px 34px; background:#f2f2f2;">
+      <p><strong>第二層（嘴巴說的）：</strong>公司官網與海報寫的「以客為尊、工作生活平衡」。</p>
+    </div>
+    <div style="border:4px solid #111; padding:26px 34px; background:#111111; color:#ffffff;">
+      <p style="color:#ffffff;"><strong>第三層（潛規則真相）：</strong><span style="border-bottom:3px solid #ffffff;">領導者真正獎勵或容忍什麼，那就是文化！</span>只要每次都升遷半夜回訊息的人，全公司就會變成過勞文化。</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>37 / 50</span></div>
+</section>
+
+<!-- PAGE 38: 版型G (前四步矩陣) -->
+<section>
+  <div class="hdr-box"><h2>帶領團隊改革八步驟 (前四步：點火破冰)</h2><span class="tag-bw">37</span></div>
+  <div class="grid-2x2">
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">1. 製造危機感</span><span class="tag-inv">打破安逸</span></div>
+      <p style="font-size:40px !important;">拿數據給大家看：「再不改，明年新生根本不會想加我們社團！」讓大家動起來。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">2. 找齊鐵桿盟友</span><span class="tag-bw">組改革團</span></div>
+      <p style="font-size:40px !important;">千萬別一個人單挑全場，先拉攏幾個有威望、有能力的幹部組成改革核心小組。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">3. 畫出改革藍圖</span><span class="tag-bw">講清楚目標</span></div>
+      <p style="font-size:40px !important;">用三句話講明白「改完之後會變多棒」，不要講一堆沒人聽懂的空洞理論。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">4. 不斷重複溝通</span><span class="tag-inv">持續滲透</span></div>
+      <p style="font-size:40px !important;">開會講、群組講、吃飯聊，而且幹部自己要先照新規矩做，大家才會相信。</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>38 / 50</span></div>
+</section>
+
+<!-- PAGE 39: 版型G (後四步矩陣) -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">38</span><h2>帶領團隊改革八步驟 (後四步：徹底落地)</h2></div>
+  <div class="grid-2x2">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">5. 拆掉舊路障</span><span class="tag-bw">放手給試</span></div>
+      <p style="font-size:40px !important;">廢除繁瑣無用的舊表格與老規矩，讓想創新的人可以大膽去執行新點子。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">6. 先打一場小勝仗</span><span class="tag-inv">證明有效</span></div>
+      <p style="font-size:40px !important;">三個月內先做出一個成功小活動，用漂亮成績單堵住那些唱衰者的嘴巴！</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">7. 乘勝追擊別鬆懈</span><span class="tag-inv">繼續深化</span></div>
+      <p style="font-size:40px !important;">小成功後千萬別太早開慶功宴，趁著大家信心滿滿，繼續改革最難啃的骨頭。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">8. 寫進交接手冊</span><span class="tag-bw">變成習慣</span></div>
+      <p style="font-size:40px !important;">把新作法寫進正式制度與下一屆交接手冊，確保不會換了領導人就打回原形。</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>39 / 50</span></div>
+</section>
+
+<!-- PAGE 40: 版型C -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">39</span><h2>為什麼大家總愛反對改變？三招化解抗拒</h2></div>
+  <div class="row-split">
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">生活案例解析</span>
+        <div class="sub-head">社團「紙本記帳」改「雲端記帳」</div>
+        <p style="font-size:40px !important;">舊總務反對是因為怕電腦操作出錯；新社長手把手教他用模板，並請他擔任新系統測試顧問，他立刻全力支持！</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="180" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="105" y="68" font-size="22" text-anchor="middle" font-weight="bold">害怕不會用</text>
+        <text x="230" y="70" font-size="34" text-anchor="middle" font-weight="bold">➔</text>
+        <rect x="265" y="30" width="180" height="60" fill="#111"/><text x="355" y="68" fill="#fff" font-size="22" text-anchor="middle" font-weight="bold">教學＋邀參與</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>反對的真正原因：</strong>大家不是討厭改變，而是害怕「改完之後我不會用、變得沒價值」。</li>
+        <li><strong>第一招「事前講清楚」：</strong>別搞突然襲擊，提前說明為什麼要改，消除大家的恐慌。</li>
+        <li><strong>第二招「拉反對派入夥」：</strong>找意見最多的人一起參與規劃，他就會從酸民變成幫手！</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>40 / 50</span></div>
+</section>
+
+<!-- PAGE 41: 版型B (左右雙軌平行框) -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">40</span><h2>雙元性領導：顧好眼前飯碗，同時找新出路</h2></div>
+  <div class="row-split">
+    <div class="col-50 box-plain" style="justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">左手：優化基本盤</div>
+        <div class="sub-head">把現在最賺錢的做到極致</div>
+        <p style="font-size:41px !important;">維持高效率、零失誤，確保公司每天都有穩定的現金流進帳，不會餓死。</p>
+      </div>
+      <div class="box-gray" style="padding:18px 24px;"><strong>大廠做法：</strong>把傳統電子零件製造效率壓到極致賺穩定利潤。</div>
+    </div>
+    <div class="col-50 box-gray" style="border-width:4px; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">右手：探索新大陸</div>
+        <div class="sub-head">撥出資源嘗試未來新技術</div>
+        <p style="font-size:41px !important;">成立獨立創新小隊大膽試錯，尋找下一個十年的成長新金礦，避免被時代淘汰。</p>
+      </div>
+      <div style="background:#111; color:#fff; padding:18px 24px;"><strong>大廠做法：</strong>鴻海、台達電重金研發電動車與智慧儲能設備。</div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>41 / 50</span></div>
+</section>
+
+<!-- PAGE 42: 版型F (純經典大字條列 + 危機處理三步驟) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">41</span><h2>危機領導力：出大事、被炎上時，老大怎麼辦？</h2></div>
+  <div class="box-plain" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <ul class="arrow-list">
+      <li><strong>黃金 1 小時原則：</strong>出包千萬別刪文裝死或發律師函威脅網友！第一時間坦承錯誤並停止傷害擴大。</li>
+      <li><strong>授權現場直接處理：</strong>危機當下資訊都在第一線，別再層層開會請示，讓現場立刻止血補償。</li>
+      <li><strong>把教訓變系統升級：</strong>風波過後不找替死鬼，而是公開改善時間表、修補流程漏洞，反而能挽回信任。</li>
+    </ul>
+  </div>
+  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; margin-top:22px; text-align:center; font-size:38px; font-weight:bold;">
+    <div style="background:#111; color:#fff; padding:18px;">第一步：1小時內立刻止血</div>
+    <div style="border:3px solid #111; padding:18px; background:#f0f0f0;">第二步：誠實道歉不推卸</div>
+    <div style="border:3px solid #111; padding:18px;">第三步：公布改善時間表</div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>42 / 50</span></div>
+</section>
+
+<!-- PAGE 43: 版型G (四個思考陷阱) -->
+<section>
+  <div class="hdr-box"><h2>決策盲點：聰明人最容易掉進的四個思考陷阱</h2><span class="tag-bw">42</span></div>
+  <div class="grid-2x2">
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">只聽自己愛聽的</span><span class="tag-inv">確認偏誤</span></div>
+      <p style="font-size:40px !important;">心裡先決定要辦某個活動，就只看支持者的留言，把反對的警訊全部當耳邊風。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">捨不得認賠殺出</span><span class="tag-bw">沉沒成本</span></div>
+      <p style="font-size:40px !important;">已經花了三週寫這個企劃，明知方向完全錯誤卻不肯重來，結果浪費更多時間。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">開會一面倒附和</span><span class="tag-bw">團體迷思</span></div>
+      <p style="font-size:40px !important;">大家怕破壞氣氛不敢唱反調，結果全組一起通過一個超荒謬的決定。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">破解法：指派烏鴉嘴</span><span class="tag-inv">魔鬼代言人</span></div>
+      <p style="font-size:40px !important;">每次做重大決定前，刻意指定一個人專門負責挑毛病、找失敗理由！</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>43 / 50</span></div>
+</section>
+
+<!-- PAGE 44: 版型A -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">43</span><h2>跨世代合作：當年輕新人遇上資深主管怎麼溝通？</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>看懂世代差異：</strong>資深前輩重視「規矩與資歷」；年輕世代重視「做這件事有什麼意義」。</li>
+        <li><strong>雙向互當老師：</strong>前輩教新人商業經驗與談判眉角；新人教前輩數位工具與新趨勢。</li>
+        <li><strong>包容不同性格：</strong>讓內向細心的人寫企劃、外向活潑的人上台簡報，各展所長。</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">職場溝通秘訣</span>
+        <div class="sub-head">別只叫新人「照做就對了」</div>
+        <p style="font-size:40px !important;">只要主管花 2 分鐘說明這份報表對客戶的重要性，年輕世代的執行力與創意往往比誰都驚人！</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="180" height="60" fill="#111"/><text x="105" y="68" fill="#fff" font-size="22" text-anchor="middle">前輩給實戰經驗</text>
+        <path d="M205,50 L255,50 M255,70 L205,70" stroke="#111" stroke-width="5"/>
+        <rect x="265" y="30" width="180" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="355" y="68" font-size="22" text-anchor="middle" font-weight="bold">新人帶數位新招</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>44 / 50</span></div>
+</section>
+
+<!-- PAGE 45: 版型E -->
+<section>
+  <div class="hdr-line"><span class="tag-bw">44</span><h2>遠距線上協作：不見面也能把報告做出高水準</h2></div>
+  <div class="box-leftbar" style="margin-bottom:24px;">
+    <p><strong>核心原則：</strong>看「準時交出的成果」而不是盯著通訊軟體綠燈；善用雲端共編文件減少無效開會，但關鍵時刻仍要見面破冰。</p>
+  </div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <span class="case-label">大學生分組必學</span>
+      <div class="sub-head">終結「兩小時無效線上會議」</div>
+      <p style="font-size:41px !important;">開線上會議前 1 小時先把議程貼在群組，大家先在雲端文件填好意見，開會只針對有爭議的地方表決，30 分鐘準時下線！</p>
+    </div>
+    <div class="col-42 box-gray" style="justify-content:center; align-items:center;">
+      <svg width="100%" height="200" viewBox="0 0 460 200">
+        <rect x="25" y="25" width="410" height="65" fill="#fff" stroke="#111" stroke-width="3"/><text x="230" y="66" font-size="24" text-anchor="middle" font-weight="bold">會前：雲端文件先填意見</text>
+        <rect x="25" y="115" width="410" height="65" fill="#111"/><text x="230" y="156" fill="#fff" font-size="24" text-anchor="middle" font-weight="bold">會中：30分鐘針對爭議拍板</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>45 / 50</span></div>
+</section>
+
+<!-- PAGE 46: 版型C -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">45</span><h2>數位工具時代：當軟體越來越強，領袖要做什麼？</h2></div>
+  <div class="row-split">
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">未來職場競爭力</span>
+        <div class="sub-head">人類導航 + 工具引擎</div>
+        <p style="font-size:40px !important;">科技工具不會取代大學生，但「懂得帶領團隊善用新工具提升 10 倍效率的人」，一定會取代只會土法煉鋼的人！</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="195" height="60" fill="#111"/><text x="112" y="68" fill="#fff" font-size="22" text-anchor="middle">人類：方向與溫度</text>
+        <rect x="250" y="30" width="195" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="347" y="68" font-size="22" text-anchor="middle" font-weight="bold">工具：速度與算力</text>
+      </svg>
+    </div>
+    <div class="col-58 box-plain">
+      <ul class="arrow-list">
+        <li><strong>會「問對問題」更重要：</strong>自動化工具很會算資料，但只有人類知道客戶真正痛在哪裡。</li>
+        <li><strong>當團隊的總編輯：</strong>學會判斷數據背後哪裡有盲點，並把零碎資訊整合成好故事。</li>
+        <li><strong>守住資安底線：</strong>教導團隊絕不能把公司機密或客戶個資隨便上傳到公開網路空間。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>46 / 50</span></div>
+</section>
+
+<!-- PAGE 47: 版型B (上下雙欄對比) -->
+<section>
+  <div class="hdr-line"><span class="tag-inv">46</span><h2>領導梯隊轉折：為何「最強隊員」常當不好隊長？</h2></div>
+  <div class="stack-rows">
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#f0f0f0; border-right:3px solid #111111; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="margin:0;">心態大轉換</div>
+        <div style="font-size:34px; margin-top:8px;">個人 ➔ 團隊成績</div>
+      </div>
+      <div style="width:72%; padding:26px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p>以前是「自己拿 100 分就好」，當隊長後變成「幫 5 個隊員都拿到 85 分」。時間要花在教人、排程與鼓勵，戒掉自己搶著做的習慣。</p>
+      </div>
+    </div>
+    <div style="display:flex; border:3px solid #111111; flex:1;">
+      <div style="width:28%; background:#111111; color:#ffffff; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px;">
+        <div class="sub-head" style="color:#ffffff; margin:0;">職場常見悲劇</div>
+        <div style="font-size:34px; margin-top:8px;">王牌業務變爛主管</div>
+      </div>
+      <div style="width:72%; padding:26px 36px; display:flex; flex-direction:column; justify-content:center;">
+        <p>因為他升官後還是每天自己跑客戶，沒時間教新人，結果自己累得半死，整個部門的總業績反而大退步！</p>
+      </div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>47 / 50</span></div>
+</section>
+
+<!-- PAGE 48: 版型D (70-20-10 三欄結構) -->
+<section>
+  <div class="hdr-box"><h2>培養接班人 (70-20-10 法則)：怎麼把學弟妹帶起來？</h2><span class="tag-bw">47</span></div>
+  <div class="col-3-grid">
+    <div class="box-gray" style="border-width:4px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-inv" style="display:inline-block; margin-bottom:14px;">70% 親自下場做</div>
+        <div class="sub-head">實戰歷練成長最快</div>
+        <p style="font-size:40px !important;">讓大一學弟妹直接擔任小活動「副總召」實際跑流程，在真實戰場中學習扛責任。</p>
+      </div>
+      <div style="border-top:3px solid #111; padding-top:10px; font-size:34px; font-weight:bold;">關鍵：自己退居二線當顧問</div>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">20% 學長姐指導</div>
+        <div class="sub-head">賽後 15 分鐘覆盤</div>
+        <p style="font-size:40px !important;">活動結束後陪他檢討，具體告訴他哪裡做得超棒、下次哪裡可以調整得更順。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">重點：及時給予正向回饋</div>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="tag-bw" style="display:inline-block; margin-bottom:14px;">10% 上課與看書</div>
+        <div class="sub-head">建立基礎觀念</div>
+        <p style="font-size:40px !important;">聽社課、讀交接手冊只是打地基，真正把能力變成自己的，一定要靠下場實作。</p>
+      </div>
+      <div style="border-top:2px solid #111; padding-top:10px; font-size:34px;">目標：交接不倒社、無縫接軌</div>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>48 / 50</span></div>
+</section>
+
+<!-- PAGE 49: 版型A -->
+<section>
+  <div class="hdr-double"><span class="tag-inv">48</span><h2>領導者精力管理：先照顧好自己，才能照顧別人</h2></div>
+  <div class="row-split">
+    <div class="col-58 box-plain">
+      <ul class="classic-list">
+        <li><strong>管理「能量」比管理「時間」重要：</strong>每天熬夜爆肝寫報告，效率只會越來越差。</li>
+        <li><strong>情緒會傳染：</strong>隊長如果整天焦慮崩潰，全組都會跟著恐慌；你穩住了，團隊就穩了。</li>
+        <li><strong>刻意留白充電：</strong>每週留一段不看手機、不開會的時間運動或發呆，讓大腦重新開機。</li>
+      </ul>
+    </div>
+    <div class="col-42 box-gray">
+      <div>
+        <span class="case-label">長期抗戰心法</span>
+        <div class="sub-head">帶隊是馬拉松，不是百米衝刺</div>
+        <p style="font-size:40px !important;">真正厲害的領袖懂得分配體力，在最關鍵的決賽或期末發表前睡飽吃好，用最清醒的大腦帶領全隊拿高分。</p>
+      </div>
+      <svg width="100%" height="120" viewBox="0 0 460 120">
+        <rect x="15" y="30" width="130" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="80" y="68" font-size="22" text-anchor="middle" font-weight="bold">睡飽運動</text>
+        <rect x="165" y="30" width="130" height="60" fill="#111"/><text x="230" y="68" fill="#fff" font-size="22" text-anchor="middle" font-weight="bold">穩住情緒</text>
+        <rect x="315" y="30" width="130" height="60" fill="#fff" stroke="#111" stroke-width="3"/><text x="380" y="68" font-size="22" text-anchor="middle" font-weight="bold">留白思考</text>
+      </svg>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義</span><span>49 / 50</span></div>
+</section>
+
+<!-- PAGE 50: 版型G (全課程總結矩陣) -->
+<section>
+  <div class="hdr-dark"><span class="tag-bw">49</span><h2>總結：從今天開始，練出你的超強領導力！</h2></div>
+  <div class="grid-2x2">
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">1. 看人下菜碟</span><span class="tag-bw">彈性切換</span></div>
+      <p style="font-size:40px !important;">沒有一招打天下的帶法，根據事情急不急、隊友熟不熟，隨時調整指令或放手。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">2. 規矩與夢想並重</span><span class="tag-inv">雙輪驅動</span></div>
+      <p style="font-size:40px !important;">把分工與獎懲講清楚守住底線，再用共同目標與溫暖氣氛點燃大家熱情。</p>
+    </div>
+    <div class="box-gray" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">3. 成就身旁的隊友</span><span class="tag-inv">教練思維</span></div>
+      <p style="font-size:40px !important;">真正的領導不是自己當超人，而是透過提問與授權，讓每個隊友都發光發熱。</p>
+    </div>
+    <div class="box-plain" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; border-bottom:2px solid #111; padding-bottom:8px;"><span class="sub-head" style="margin:0;">4. 誠信靠譜走天下</span><span class="tag-bw">長久信任</span></div>
+      <p style="font-size:40px !important;">說到做到、敢扛責任、真心待人，無論在大學分組或未來職場，你都是最受歡迎的領袖！</p>
+    </div>
+  </div>
+  <div class="ppt-footer"><span>現代領導學課堂講義（全套 50 頁完）</span><span>50 / 50</span></div>
+</section>
+
+<!-- 傳統黑白幻燈片換頁控制列 -->
+<div class="slide-controls">
+  <button onclick="changeSlide(-1)">◀ 上一頁</button>
+  <span id="slideCounter">1 / 50</span>
+  <button onclick="changeSlide(1)">下一頁 ▶</button>
+</div>
+
+<script>
+  (function() {
+    var slides = document.querySelectorAll('section');
+    var current = 0;
+
+    function fitSlide() {
+      var scaleX = window.innerWidth / 1920;
+      var scaleY = window.innerHeight / 1080;
+      var scale = Math.min(scaleX, scaleY);
+      slides.forEach(function(s) {
+        s.style.transform = 'scale(' + scale + ')';
+        s.style.transformOrigin = 'center center';
+      });
+    }
+
+    function showSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      slides.forEach(function(s, i) {
+        s.classList.toggle('active', i === index);
+      });
+      current = index;
+      var counter = document.getElementById('slideCounter');
+      if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+    }
+
+    window.changeSlide = function(step) {
+      showSlide(current + step);
+    };
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        changeSlide(1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        changeSlide(-1);
+      }
+    });
+
+    function cleanUpCitations() {
+      var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      var node;
+      var regex = /\[cite[^\]]*\]|\[cite_start\]|\[cite_end\]|\[\d+\]/gi;
+      while (node = walker.nextNode()) {
+        if (regex.test(node.nodeValue)) {
+          node.nodeValue = node.nodeValue.replace(regex, '');
+        }
+      }
+    }
+
+    window.addEventListener('resize', fitSlide);
+    document.addEventListener('DOMContentLoaded', function() {
+      fitSlide();
+      showSlide(0);
+      cleanUpCitations();
+    });
+    window.addEventListener('load', function() {
+      fitSlide();
+      cleanUpCitations();
+      setInterval(cleanUpCitations, 100);
+    });
+  })();
+</script>
+
+</body>
+</html>
